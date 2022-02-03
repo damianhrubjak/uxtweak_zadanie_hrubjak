@@ -1,10 +1,8 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    />
+  <q-page
+    class="flex flex-center page-width q-mx-auto bg-pallette-white q-mt-sm"
+  >
+    <h1 class="text-h1">BORIS je not gai</h1>
   </q-page>
 </template>
 

@@ -1,1 +1,65 @@
-// app global css in SCSS form
+/*
+
+COLORS
+
+*/
+
+$pallette-gray: #f7f7f7;
+$pallette-gray-warmer: #f0efe9;
+$pallette-gray-darker: #e9eae8;
+$pallette-white: #ffffff;
+$pallette-gray-text: #93958d;
+$pallette-gray-text-darker: #32332a;
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.page-width {
+  width: 1440px;
+}
+
+.text-transform-none {
+  text-transform: none;
+}
+.bg-pallette-gray {
+  background-color: $pallette-gray;
+}
+.bg-pallette-gray-darker {
+  background-color: $pallette-gray-darker;
+}
+.bg-pallette-gray-warmer {
+  background-color: $pallette-gray-warmer;
+}
+.bg-pallette-white {
+  background-color: $pallette-white;
+}
+.q-py-xxl {
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+}
+.q-px-8-75 {
+  padding-left: 8.75rem;
+  padding-right: 8.75rem;
+}
+.nav-button {
+  background-color: transparent;
+  color: $pallette-gray-text;
+  border: none;
+  transition: 0.3s;
+  font-size: 1rem;
+  &:hover {
+    background-color: $pallette-gray-darker;
+    color: $pallette-gray-text-darker;
+  }
+  .yellow-icon {
+    color: #ebb60a;
+    width: 10px;
+  }
+}
+.ghost-btn-stacked {
+  line-height: 1.1;
+  span:nth-child(2) {
+    font-size: 0.875rem;
+  }
+}
