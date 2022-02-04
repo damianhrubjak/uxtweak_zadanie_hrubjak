@@ -14,8 +14,8 @@
 
 <script>
 import { defineComponent, ref } from "vue";
-import Header from "components/header.vue";
-import Footer from "components/footer.vue";
+import Header from "src/components/header/header.vue";
+import Footer from "src/components/footer/footer.vue";
 
 export default defineComponent({
   name: "MainLayout",
