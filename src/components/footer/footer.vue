@@ -1,17 +1,19 @@
 <template>
   <footer class="app-footer">
-    <div class="page-width q-mx-auto bg-pallette-gray-warmer q-py-xxl q-px-xxl">
-      <div class="row">
-        <div
-          class="col-2"
-          v-for="linkGroup in links"
-          v-bind:key="linkGroup.name"
-        >
-          <p class="font-gray-text-darker font-black font-size-20px q-ml-sm">
-            {{ linkGroup.name }}
-          </p>
-          <div v-for="item in linkGroup.items" v-bind:key="item">
-            <FooterLink v-bind:label="item" />
+    <div class="page-width q-mx-auto bg-pallette-gray-warmer footer-wrapper">
+      <div class="row page-wrapper">
+        <div class="row col-12 col-md-8 footer-grid">
+          <div
+            class="footer-item"
+            v-for="linkGroup in links"
+            v-bind:key="linkGroup.name"
+          >
+            <p class="font-gray-text-darker font-black font-size-20px q-ml-sm">
+              {{ linkGroup.name }}
+            </p>
+            <div v-for="item in linkGroup.items" v-bind:key="item">
+              <FooterLink v-bind:label="item" />
+            </div>
           </div>
         </div>
       </div>
@@ -37,7 +39,7 @@ export default defineComponent({
     const links = [
       {
         name: "Product",
-        items: ["Features", "Pricing", "Demos", "consulting"],
+        items: ["Features", "Pricing", "Demos", "Consulting"],
       },
       {
         name: "Resources",

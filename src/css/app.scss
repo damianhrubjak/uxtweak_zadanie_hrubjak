@@ -24,6 +24,16 @@ body {
   width: 100%;
   max-width: 1440px;
 }
+
+.page-wrapper {
+  max-width: 1250px;
+  margin: 0 auto;
+
+  width: calc(100% - 32px);
+  @media only screen and (max-width: 768px) {
+  }
+}
+
 .font-black {
   font-weight: 900;
 }
@@ -89,16 +99,8 @@ body {
   border-radius: 1rem;
 }
 
-.nav-button-popup {
-  z-index: 5;
-  transform: translateY(115%) translateX(-40%);
-  width: 560px;
-  transition: 0.2s;
-  visibility: hidden;
-  opacity: 0;
-  color: $pallette-gray-text-darker;
-  box-shadow: 0 2px 10px 1px
-    rgba($color: $pallette-gray-text-darker, $alpha: 0.15);
+.hamburger {
+  display: none;
 }
 
 .nav-button {
@@ -111,7 +113,7 @@ body {
     background-color: $pallette-gray-darker;
     color: $pallette-gray-text-darker;
     .nav-button-popup {
-      transform: translateY(100%) translateX(-40%);
+      transform: translateY(100%);
       cursor: auto;
       visibility: visible;
       opacity: 1;
@@ -122,13 +124,49 @@ body {
     width: 10px;
   }
 }
+
+.nav-button-popup {
+  z-index: 5;
+  transform: translateY(115%);
+  width: 500px;
+  max-width: 560px;
+  transition: 0.2s;
+  visibility: hidden;
+  opacity: 0;
+  color: $pallette-gray-text-darker;
+  box-shadow: 0 2px 10px 1px
+    rgba($color: $pallette-gray-text-darker, $alpha: 0.15);
+}
+.popup-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.side-menu {
+  z-index: 5;
+  width: 300px;
+  height: 100vh;
+  box-shadow: 0 0 0px 0 rgba($color: $pallette-gray-text-darker, $alpha: 0.7);
+  transform: translateX(100%);
+  transition: 0.3s 0.2s transform, 0.5s box-shadow;
+  header {
+    background-color: $pallette-gray-darker;
+  }
+}
+.side-menu.show {
+  transform: translateX(0%);
+  box-shadow: 0 0 0px calc(100vw - 300px)
+    rgba($color: $pallette-gray-text-darker, $alpha: 0.8);
+  transition: 0.5s transform, 0.3s 0.2s box-shadow;
+}
+
 .ghost-btn-stacked {
   line-height: 1.1;
 }
 
-.contact-page {
-  padding-left: 8.75rem;
-  padding-right: 8.75rem;
+.contact-page-padding {
+  // padding: clamp(0px, 8vw, 8.75rem);
+  padding: 5rem 0;
 }
 .contact-page-left {
   display: flex;
@@ -136,6 +174,150 @@ body {
   justify-content: space-between;
 }
 
-.padding-r-100px {
-  padding-right: 6.25rem;
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6.25rem;
+}
+
+.footer-wrapper {
+  padding: 5rem 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.footer-link > span {
+  text-align: left;
+}
+
+//? RESPONSIVE
+
+/*
+
+Extra Small	xs	Up to 599px
+Small	sm	600px to 1023px
+Medium	md	1024px to 1439px
+Large	lg	1440px to 1919px
+Extra Large	xl	1920px and up
+
+*/
+
+@media only screen and (max-width: 1300px) {
+  // .contact-page-padding {
+  //   padding: 5rem;
+  // }
+}
+@media only screen and (max-width: 1200px) {
+  .schedule-live-demo {
+    padding: 5rem 2rem;
+  }
+  .contact-form-wrapper {
+    padding: 2rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .contact-page-grid {
+    gap: 3.125rem;
+  }
+  .schedule-live-demo {
+    padding: 5rem 1.5em;
+  }
+  .contact-form-wrapper {
+    padding: 1.5rem;
+  }
+  .schedule-live-demo,
+  .contact-form-wrapper {
+    max-width: 500px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .schedule-live-demo {
+    padding: 3rem 1.5em;
+  }
+}
+//* hamburger
+@media only screen and (max-width: 850px) {
+  .navigation-wrapper {
+    justify-content: flex-end;
+  }
+  .links-wrapper {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .nav-button {
+    margin-top: 0.5rem;
+    border-radius: 0px;
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+  }
+  .nav-button-popup {
+    right: 1rem;
+    left: unset;
+    width: calc(100vw - 2rem);
+  }
+  .nav-button-popup {
+    max-width: 400px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .grid-spacer {
+    display: none;
+  }
+  .contact-page-grid {
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  .schedule-live-demo {
+    padding: 2rem 3rem;
+  }
+  .contact-form-wrapper {
+    padding: 2rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-page-padding {
+    padding: 0rem 0 2rem 0;
+  }
+  .schedule-live-demo {
+    padding: 2rem;
+    h3 {
+      font-size: 2.5rem;
+    }
+  }
+}
+@media only screen and (max-width: 430px) {
+  .popup-content {
+    grid-template-columns: 1fr;
+  }
+  .schedule-live-demo {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .contact-form-wrapper {
+    padding: 1rem;
+  }
+  .schedule-live-demo {
+    padding: 1rem;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .side-menu {
+    width: 100%;
+  }
 }

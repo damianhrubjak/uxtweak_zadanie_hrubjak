@@ -1,8 +1,8 @@
 <template>
   <q-btn
-    v-bind:label="label"
+    :label="label"
     flat
-    class="w-full text-left font--gray-text-warmer"
+    class="w-full text-left font--gray-text-warmer footer-link"
     align="left"
     padding="10px"
     size="1rem"
