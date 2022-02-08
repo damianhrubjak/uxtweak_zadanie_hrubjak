@@ -1,7 +1,5 @@
 <template>
-  <q-page
-    class="page-width flex flex-center q-mx-auto bg-pallette-white q-mt-sm"
-  >
+  <div class="page-width flex flex-center q-mx-auto bg-pallette-white q-mt-sm">
     <div class="w-full contact-page-grid contact-page-padding page-wrapper">
       <div class="grid-spacer"></div>
       <header class="text-center justify-end">
@@ -46,7 +44,7 @@
         <ContactForm />
       </div>
     </div>
-  </q-page>
+  </div>
 </template>
 
 <script>
